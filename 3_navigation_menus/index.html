@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation menus</title>
+</head>
+
+<body>
+  <ul id="menu">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <script>
+    const menu = document.getElementById("menu");
+    menu.addEventListener("click", function (event) {
+      event.preventDefault();
+      if (event.target.tagName === "A") {
+        console.log("Navigating to: ", event.target.getAttribute("href"));
+      }
+    });
+  </script>
+</body>
+
+</html>
+
+<!-- In this example, we have a navigation menu with three menu items. Instead of adding an event listener to each menu item, we attach it to the parent element (the ul) and check if the user clicked on a menu item (a element) using the event.target property. If the user did click on a menu item, we prevent the default behavior of the link (redirecting to the href) and log the href attribute of the clicked link to the console. -->

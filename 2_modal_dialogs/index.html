@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal dialogs</title>
+</head>
+
+<body>
+  <div id="modal">
+    <div id="modal-content">
+      <p>Modal content goes here</p>
+      <button id="close-modal">Close</button>
+    </div>
+  </div>
+  <script>
+    const modal = document.getElementById("modal");
+    const closeModal = document.getElementById("close-modal");
+
+    modal.addEventListener("click", function (event) {
+      if (event.target !== modal) {
+        return;
+      }
+      modal.style.display = "none";
+    });
+
+    closeModal.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
+  </script>
+</body>
+
+</html>
+
+<!-- In this example, we have a modal dialog with an overlay and a close button. We attach an event listener to the overlay and check if the user clicked on it using the event.target property. If the user did click on the overlay, we hide the modal dialog by setting its display property to none. -->
