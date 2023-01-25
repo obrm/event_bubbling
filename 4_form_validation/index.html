@@ -32,7 +32,10 @@
 
 </html>
 
-<!-- In this example, we have a simple form with two required fields (name and email). We attach an event listener to the form and check if the user filled in both fields using the value property of the input elements. If the user did not fill in both fields, we prevent the form from submitting and display an alert message. If the user did fill in both fields, we log the name and email to the console.
+<!-- 
+  In this example, we have a simple form with two required fields (name and email). We attach an event listener to the form and check if the user filled in both fields using the value property of the input elements. If the user did not fill in both fields, we prevent the form from submitting and display an alert message. If the user did fill in both fields, we log the name and email to the console.
 
-This is an example of event bubbling, where the event starts at the innermost element (the button) and propagates upward to the parent element (the container).
+  Here, we use event bubbling to handle the form's submit event. The event is triggered by the submit button, and it bubbles up through the parent elements, allowing me to handle the event at a higher level, which is the form element. By using event bubbling, we are able to attach a single event listener to the form, rather than having to attach an event listener to each individual form element. This allows me to perform form validation and handle the form's submission process more efficiently and maintainably.
+
+  The event is triggered by the submit button, when the user clicks on it, the event bubbles up through the parent elements, the event object is passed to the event listener attached to the form element. With event bubbling, the event object is passed to the event listeners in the order they were attached. In this example, I was able to check if the user filled in both fields using the value property of the input elements, preventing the form from submitting if the fields are not filled and displaying an alert message. If the user did fill in both fields, I logged the name and email to the console.
 -->

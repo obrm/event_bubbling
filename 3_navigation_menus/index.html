@@ -27,7 +27,10 @@
 
 </html>
 
-<!-- In this example, we have a navigation menu with three menu items. Instead of adding an event listener to each menu item, we attach it to the parent element (the ul) and check if the user clicked on a menu item (a element) using the event.target property. If the user did click on a menu item, we prevent the default behavior of the link (redirecting to the href) and log the href attribute of the clicked link to the console. 
+<!-- 
+  In this example, we have an unordered list with three list items, each containing an anchor tag. Instead of adding an event listener to each anchor tag, we attach it to the parent element (the ul) and check which anchor tag was clicked using the event.target property.
 
-This is an example of event bubbling, where the event starts at the innermost element (the submit button) and propagates upward to the parent element (the form).
+  When a user clicks on one of the anchor tags, the click event bubbles up to the parent element (the ul), where the event listener is attached. The event listener checks which anchor tag was clicked using the event.target property and the tagName property to verify if the clicked element is an A element.
+
+  Because the event is bubbling up, we are able to handle the click event on multiple anchor tags by attaching a single event listener to the parent element (the ul). This allows us to handle the navigation process more efficiently and maintainably. It also allows to preventDefault() the link from redirecting the page, and instead, you can handle the navigation process in your own way by logging the link or doing something else.
 -->

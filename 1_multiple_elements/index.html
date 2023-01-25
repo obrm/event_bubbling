@@ -27,7 +27,8 @@
 
 </html>
 
-<!-- In this example, we have an unordered list with three list items. Instead of adding an event listener to each list item, we attach it to the parent element (the ul) and check which list item was clicked using an if statement to check the tagName property of the event.target to see if it is an "LI" element, which is the type of element we want to handle. If it is an "LI" element, we log the text content of the element to the console. If it is not an "LI" element, the code inside the if statement is not executed, which means the event is not handled. This way, it will work properly and only handle the events that are coming from the li elements. 
+<!-- 
+  In this example, we have an unordered list with three list items. Instead of adding an event listener to each list item, we attach it to the parent element (the ul) and check which list item was clicked using an if statement to check the tagName property of the event.target to see if it is an "LI" element, which is the type of element we want to handle. If it is an "LI" element, we log the text content of the element to the console. If it is not an "LI" element, the code inside the if statement is not executed, which means the event is not handled. This way, it will work properly and only handle the events that are coming from the li elements. 
 
-We are using event bubbling to handle click events on multiple elements. We attach the event listener to the parent element (the ul) and when a user clicks on one of the list items, the event bubbles up to the parent element, where we can check which list item was clicked using the event.target property.
+  We are using event bubbling to handle click events on multiple elements. We attach the event listener to the parent element (the ul) and when a user clicks on one of the list items, the event bubbles up to the parent element, where we can check which list item was clicked using the event.target property.
 -->
