@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #container {
+      background-color: blue;
+      padding: 20px;
+    }
+
+    #child1,
+    #child2 {
+      background-color: yellow;
+      width: 100%;
+      text-align: center;
+      padding-top: 10px;
+    }
+
+    #grandchild2,
+    #grandchild2 {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- In this example, we have a container div with two child divs, each containing a button. -->
+  <div id="container">
+    <div id="child1">
+      <button id="grandchild1">Click me</button>
+    </div>
+    <div id="child2">
+      <button id="grandchild2">Click me</button>
+    </div>
+  </div>
+
+  <script>
+    const container = document.getElementById("container");
+    const child1 = document.getElementById("child1");
+    const child2 = document.getElementById("child2");
+    const grandchild1 = document.getElementById("grandchild1");
+    const grandchild2 = document.getElementById("grandchild2");
+
+    // We attach a "click" event listener to each div and button element.
+    //  - When the user clicks on one of the buttons, the click event will bubble up from the button, to its parent div, and then   to the containing div.
+
+    /* 
+    - So if the user clicks on "grandchild1" button, the following will be logged to the console:
+      - "Grandchild 1 clicked"
+      - "Child 1 clicked"
+      - "Container clicked"
+    */
+    container.addEventListener("click", function (event) {
+      console.log("Container clicked");
+    });
+
+    child1.addEventListener("click", function (event) {
+      console.log("Child 1 clicked");
+
+      /*
+        - The event.stopPropagation() method is used to stop the event from propagating to its parent element, so if you click on "grandchild1" button, the  following will be logged to the console:
+            - "Grandchild 1 clicked"
+      */
+      event.stopPropagation(); // stops the event from propagating to its parent element
+    });
+
+    child2.addEventListener("click", function (event) {
+      console.log("Child 2 clicked");
+    });
+
+    grandchild1.addEventListener("click", function (event) {
+      console.log("Grandchild 1 clicked");
+    });
+
+    grandchild2.addEventListener("click", function (event) {
+      console.log("Grandchild 2 clicked");
+    });
+  </script>
+</body>
+
+</html>
+
+<!-- 
+  This example illustrates how events can propagate through the DOM tree and how event bubbling works. In this case, the event starts at the button and propagates up through the parent elements, triggering the event listeners that are attached to those elements.
+
+  By understanding how events propagate through the DOM tree, you can create more efficient and maintainable code by attaching event listeners to the appropriate elements and taking advantage of event bubbling to handle events on multiple elements at once. 
+-->
