@@ -19,15 +19,16 @@
   </div>
   <script>
     const modal = document.getElementById("modal");
+
     const closeModal = document.getElementById("close-modal");
-    /*
-        modal.addEventListener("click", function (event) {
-          if (event.target !== modal) {
-            return;
-          }
-          modal.style.display = "none";
-        });
-    */
+
+  modal.addEventListener("click", function (event) {
+    if (event.target !== modal) {
+      return;
+    }
+    modal.style.display = "none";
+  });
+
 
     closeModal.addEventListener("click", function () {
       modal.style.display = "none";
