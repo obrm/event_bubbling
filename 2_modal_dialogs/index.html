@@ -9,8 +9,10 @@
 </head>
 
 <body>
-  <div id="modal">
-    <div id="modal-content">
+  <div id="modal"
+    style="position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
+    <div id="modal-content"
+      style="background-color: white; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%;">
       <p>Modal content goes here</p>
       <button id="close-modal">Close</button>
     </div>
@@ -18,13 +20,14 @@
   <script>
     const modal = document.getElementById("modal");
     const closeModal = document.getElementById("close-modal");
-
-    modal.addEventListener("click", function (event) {
-      if (event.target !== modal) {
-        return;
-      }
-      modal.style.display = "none";
-    });
+    /*
+        modal.addEventListener("click", function (event) {
+          if (event.target !== modal) {
+            return;
+          }
+          modal.style.display = "none";
+        });
+    */
 
     closeModal.addEventListener("click", function () {
       modal.style.display = "none";
@@ -34,4 +37,7 @@
 
 </html>
 
-<!-- In this example, we have a modal dialog with an overlay and a close button. We attach an event listener to the overlay and check if the user clicked on it using the event.target property. If the user did click on the overlay, we hide the modal dialog by setting its display property to none. -->
+<!-- In this example, we have a modal dialog with an overlay and a close button. We attach an event listener to the overlay and check if the user clicked on it using the event.target property. If the user did click on the overlay, we hide the modal dialog by setting its display property to none. 
+
+We are using event bubbling to handle click events on a modal dialog. We attach the event listener to the parent element (the modal) and when the user clicks on the overlay, the event bubbles up to the parent element, where we can check if the user clicked on the overlay using the event.target property. If the user did click on the overlay, we hide the modal dialog by setting its display property to none.
+-->
